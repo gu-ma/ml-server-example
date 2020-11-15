@@ -1,27 +1,34 @@
-# datacrunch-stylegan2-ada
+# Datacrunch (or Paperspace ?) examples
 
-## Create and activate env
-
-ssh into your machine (replace `id_ed25519_datacrunch` with your local public key and `135.181.63.136` with the server IP address):
+First you need to ssh into your machine (replace `PATH_TO_SSHKEY` with the path to your local ssh key and `IP_ADDRESS_SERVER` with the server's IP address):
 
 ```
-ssh -i ~/.ssh/id_ed25519_datacrunch user@135.181.63.136
+ssh -i ~/.ssh/PATH_TO_SSHKEY user@IP_ADDRESS_SERVER
 ```
 
-clone this repo and create env
+Once you're on the server clone this repo:
 
 ```
-git clone git@github.com:gu-ma/datacrunch-stylegan2-ada.git
-cd datacrunch-stylegan2-ada
-chmod +x create_env.sh
-./create_env.sh
+git clone https://github.com/gu-ma/datacrunch-example.git
 ```
 
-## Activate env and start Jupyter Notebook
+## 1) Stylegan2-ada
 
-Next time you connect you do not need to run all this, you can just ssh and run:
+Create environment (you only need to do that once):
+
+```
+chmod +x sg2ada_create_env.sh
+./sg2ada_create_env.sh
+```
+
+Activate env and start Jupyter Notebook _(you only need to set the Jupyter password once)_:
+
 ```
 conda activate stylegan2-ada
 jupyter notebook password
 jupyter notebook --ip=0.0.0.0 --port=9999
 ```
+
+Then open your browser at `http://IP_ADDRESS_SERVER:9999/`
+
+## 2) GPT2
