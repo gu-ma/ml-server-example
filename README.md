@@ -1,5 +1,6 @@
 # Server examples
 
+
 ## Start
 
 First you need to ssh into your machine 
@@ -26,13 +27,15 @@ Once you're on the server clone this repo:
 git clone https://github.com/gu-ma/ml-server-example.git
 ```
 
+
 ## 1) Stylegan2-ada
 
 Create environment (you only need to do that once):
 
 ```
-chmod +x sg2ada_create_env.sh
-./sg2ada_create_env.sh
+cd sg2ada
+chmod +x create_env.sh
+./create_env.sh
 ```
 
 Activate env and start Jupyter Notebook _(you only need to set the Jupyter password once)_:
@@ -47,4 +50,34 @@ You might need to allow access to that port in the firewall (on Paperspace) by t
 
 Then open your browser at `http://IP_ADDRESS_SERVER:9999/`
 
+### Quickfix(es)
+
+For Stylegan2-ada to run on Paperspace we need to run this command once:
+
+```
+echo "export PATH=\"/usr/local/cuda-10.0/bin:\$PATH\" \nexport LD_LIBRARY_PATH=\"/usr/local/cuda-10.0/lib64:\$LD_LIBRARY_PATH\"" >> ~/.bashrc && \
+source ~/.bashrc
+```
+
+
 ## 2) GPT2
+
+Create environment (you only need to do that once):
+
+```
+cd gpt2
+chmod +x create_env.sh
+./create_env.sh
+```
+
+Activate env and start Jupyter Notebook _(you only need to set the Jupyter password once)_:
+
+```
+conda activate gpt2
+jupyter notebook password
+jupyter notebook --ip=0.0.0.0 --port=9999
+```
+
+You might need to allow access to that port in the firewall (on Paperspace) by typing: `sudo ufw allow 9999` (you can check if the firewall is running like that: `sudo ufw status`)
+
+Then open your browser at `http://IP_ADDRESS_SERVER:9999/`

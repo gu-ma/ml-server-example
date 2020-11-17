@@ -128,4 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-stylegan2-ada
+sg2ada/stylegan2-ada
