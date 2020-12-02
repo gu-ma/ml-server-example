@@ -21,13 +21,7 @@ Use the password you received by email to login, replace `IP_ADDRESS_SERVER` wit
 ssh paperspace@IP_ADDRESS_SERVER
 ```
 
-### 1.2) clone this repo:
-
-```
-git clone https://github.com/gu-ma/ml-server-example.git
-```
-
-### 1.3) Setup Jupyter notebook ([reference](https://medium.com/@datamove/setup-jupyter-notebook-server-to-start-up-on-boot-and-use-different-conda-environments-147b091b9a5f)):
+### 1.2) Setup Jupyter notebook ([reference](https://medium.com/@datamove/setup-jupyter-notebook-server-to-start-up-on-boot-and-use-different-conda-environments-147b091b9a5f)):
 
 Create a new env only for notebooks
 ```
@@ -75,7 +69,15 @@ sudo systemctl enable ipython-notebook
 
 you can connect to the notebook at: http://IP_ADDRESS_SERVER:8888/ and change kernel using the menu: 'kernel', 'change kernel' when starting a notebook 
 
-## 1) Stylegan2-ada
+## 2) Use notebooks
+
+### 2.1) clone this repo:
+
+```
+git clone https://github.com/gu-ma/ml-server-example.git
+```
+
+### 2.2) Stylegan2-ada
 
 Create environment (you only need to do that once):
 
@@ -85,7 +87,7 @@ chmod +x create_env.sh
 ./create_env.sh
 ```
 
-### Quickfix(es)
+#### Quickfix(es)
 
 For Stylegan2-ada to run on Paperspace we need to run this command once:
 
@@ -96,7 +98,7 @@ source ~/.bashrc
 
 Also, you might run into this error: https://github.com/NVlabs/stylegan2-ada/issues/2
 
-## 2) GPT2
+### 2.3) GPT2
 
 Create environment (you only need to do that once):
 
